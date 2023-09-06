@@ -2,9 +2,8 @@ import os
 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 
-from datasets import load_dataset
+from datasets import load_dataset, Dataset
 
 import torch
 
@@ -18,6 +17,12 @@ from trl import SFTTrainer, DataCollatorForCompletionOnlyLM
 from langchain.prompts import PromptTemplate
 import argparse
 import yaml
+import wandb
+import os
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
+
+wandb.login()
+wandb.init()
 
 def parse_args():
     parser = argparse.ArgumentParser(description="train")
@@ -31,19 +36,6 @@ def read_config(config_path):
         config = yaml.load(file, Loader=yaml.FullLoader)
     return config
 
-def map_at_3(predictions, labels):
-    map_sum = 0
-    pred = np.argsort(-1*np.array(predictions),axis=1)[:,:3]
-    for x,y in zip(pred,labels):
-        z = [1/i if y==j else 0 for i,j in zip([1,2,3],x)]
-        map_sum += np.sum(z)
-    return map_sum / len(predictions)
-
-# Define your custom evaluation function
-def compute_metrics(p):
-    predictions = p.predictions.tolist()
-    labels = p.label_ids.tolist()
-    return {"map@3": map_at_3(predictions, labels)}
 
 def format_text(example):
     template = """Answer the following multiple choice question by giving the most appropriate response. Answer should be one among [A, B, C, D, E]
@@ -72,9 +64,14 @@ def format_text(example):
 def train(config):
     train = pd.read_csv(config['data']['train']).sample(frac=1).reset_index(drop=True)
     valid = pd.read_csv(config['data']['valid']).sample(frac=1).reset_index(drop=True)
+    
+    train_ds = Dataset.from_pandas(train)
+    valid_ds = Dataset.from_pandas(valid)
 
-    train = train.map(format_text)
-    valid = valid.map(format_text)
+    del train, valid
+
+    train = train_ds.map(format_text)
+    valid = valid_ds.map(format_text)
 
     model_id = config['model']['model_name']
 
@@ -86,7 +83,7 @@ def train(config):
         lora_alpha=32,
         lora_dropout=0.05,
         bias="none",
-        target_modules=["query_key_value"], # , "dense", "dense_h_to_4h", "dense_4h_to_h"
+        target_modules=["up_proj", "down_proj"], # , "dense", "dense_h_to_4h", "dense_4h_to_h"
         task_type="CAUSAL_LM"
     )
 
@@ -101,27 +98,33 @@ def train(config):
             model_id,
             quantization_config=bnb_config,
             low_cpu_mem_usage=True,
-            device_map="cuda:0"
+            device_map="auto"
             )
     
     training_args = TrainingArguments(
                         output_dir="./Orca-mini-7b", 
-                        per_device_train_batch_size=4,
+                        overwrite_output_dir=True,
+                        save_total_limit=2,
+                        evaluation_strategy="steps",
+                        warmup_ratio=0.8,
+                        eval_steps=500,
+                        logging_steps=500,
+                        per_device_train_batch_size=8,
                         per_device_eval_batch_size=8,
-                        gradient_accumulation_steps=2,
+                        num_train_epochs=5,
                         learning_rate=2e-4,
-                        logging_steps=20,
-                        logging_strategy="steps",
-                        max_steps=100,
+                        save_strategy='steps',
                         optim="paged_adamw_8bit",
                         fp16=True,
-                        run_name="baseline-orca-sft"
+                        run_name="baseline-orca-sft",
+                        report_to="wandb"
                     )
     
+
     supervised_finetuning_trainer = SFTTrainer(
                                         base_model,
-                                        train_dataset=train["train"],
-                                        eval_dataset=valid["train"],
+                                        train_dataset=train,
+                                        eval_dataset=valid,
                                         args=training_args,
                                         tokenizer=tokenizer,
                                         peft_config=qlora_config,
@@ -129,7 +132,6 @@ def train(config):
                                         max_seq_length=2048,
                                         data_collator=DataCollatorForCompletionOnlyLM(tokenizer=tokenizer, 
                                                                                     response_template="Answer:"),
-                                        # compute_metrics=compute_metrics
                                     )
     
     supervised_finetuning_trainer.train()

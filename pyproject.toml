@@ -1,15 +1,19 @@
 [tool.poetry]
-name = "kgl"
+name = "llmscience"
 version = "0.1.0"
 description = ""
 authors = ["merry555 <jisukim8873@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
-kaggle = "^1.5.16"
+python = "==3.8.16"
+transformers = "^4.33.0"
 langchain = "^0.0.281"
-datasets = "^2.14.4"
+peft = "^0.5.0"
+trl = "^0.7.1"
+accelerate = "^0.22.0"
+scipy = "1.10.0"
+wandb = "^0.15.9"
 
 
 [build-system]
