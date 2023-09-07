@@ -1,0 +1,252 @@
+{
+    "os": "Linux-4.15.0-206-generic-x86_64-with-glibc2.27",
+    "python": "3.8.16",
+    "heartbeatAt": "2023-09-07T05:12:48.315430",
+    "startedAt": "2023-09-07T05:12:47.650367",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--config",
+        "/home/jisukim/LLMscience/llm/configs/config_orca_mini_v3_7b.yaml"
+    ],
+    "state": "running",
+    "program": "/home/jisukim/LLMscience/llm/finetune.py",
+    "codePath": "llm/finetune.py",
+    "git": {
+        "remote": "https://github.com/merry555/LLMscience.git",
+        "commit": "275daea0a54a4af053f1d6a103b74a005ec42624"
+    },
+    "email": "jisukim8873@gmail.com",
+    "root": "/home/jisukim/LLMscience",
+    "host": "dev-03",
+    "username": "jisukim",
+    "executable": "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/bin/python3",
+    "cpu_count": 20,
+    "cpu_count_logical": 40,
+    "cpu_freq": {
+        "current": 2902.0487,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2898.901,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2900.449,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2905.18,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2901.641,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2894.011,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2901.6,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2899.999,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2901.423,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2899.977,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2901.886,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2899.395,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2904.983,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2900.106,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2899.296,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2899.989,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2899.524,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2906.53,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2900.096,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2904.86,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2899.698,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2908.942,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2901.489,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2902.887,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2905.281,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2900.701,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2907.003,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2901.403,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2902.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2902.08,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2900.186,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2914.168,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2902.182,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2900.378,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2896.818,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2904.256,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2904.507,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2899.974,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2903.764,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2900.902,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2903.284,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 878.620922088623,
+        "used": 530.5002365112305
+    },
+    "gpu": "NVIDIA A100-PCIE-40GB",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA A100-PCIE-40GB",
+            "memory_total": 42949672960
+        },
+        {
+            "name": "NVIDIA A100-PCIE-40GB",
+            "memory_total": 42949672960
+        }
+    ],
+    "memory": {
+        "total": 125.41301345825195
+    }
+}

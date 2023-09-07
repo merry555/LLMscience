@@ -1,0 +1,23 @@
+
+
+
+
+
+
+Map: 100%|██████████| 54840/54840 [00:13<00:00, 4085.91 examples/s]
+Map: 100%|██████████| 200/200 [00:00<00:00, 3570.41 examples/s]
+Downloading (…)lve/main/config.json: 100%|██████████| 950/950 [00:00<00:00, 152kB/s]
+Traceback (most recent call last):
+  File "/home/jisukim/LLMscience/llm/finetune.py", line 160, in <module>
+    train(config)
+  File "/home/jisukim/LLMscience/llm/finetune.py", line 99, in train
+    base_model = AutoModelForCausalLM.from_pretrained(
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/models/auto/auto_factory.py", line 461, in from_pretrained
+    config, kwargs = AutoConfig.from_pretrained(
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/models/auto/configuration_auto.py", line 986, in from_pretrained
+    trust_remote_code = resolve_trust_remote_code(
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/dynamic_module_utils.py", line 538, in resolve_trust_remote_code
+    answer = input(
+EOFError: EOF when reading a line
+Loading tiiuae/falcon-7b requires to execute some code in that repo, you can inspect the content of the repository at https://hf.co/tiiuae/falcon-7b. You can dismiss this prompt by passing `trust_remote_code=True`.
+Do you accept? [y/N]

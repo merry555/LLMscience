@@ -1,0 +1,17 @@
+
+
+
+
+
+
+Map: 100%|██████████| 54840/54840 [00:13<00:00, 4149.24 examples/s]
+Map: 100%|██████████| 200/200 [00:00<00:00, 3584.22 examples/s]
+
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:15<00:00,  7.54s/it]
+Traceback (most recent call last):
+  File "/home/jisukim/LLMscience/llm/finetune.py", line 159, in <module>
+    train(config)
+  File "/home/jisukim/LLMscience/llm/finetune.py", line 118, in train
+    training_args = TrainingArguments(
+TypeError: __init__() got an unexpected keyword argument 'use_cache'
