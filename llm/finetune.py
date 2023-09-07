@@ -104,7 +104,7 @@ def train(config):
     
     model = prepare_model_for_int8_training(model)    
     
-    modules = find_all_linear_names(base_model.model)
+    modules = find_all_linear_names(model.model)
 
     config = LoraConfig(
         r=16,
