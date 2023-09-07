@@ -49,14 +49,14 @@ def find_all_linear_names(model):
 
 
 def format_text(example):
-    template = """### User: Choose the following multiple choice answer by giving the most appropriate response. Answer should be one among [A, B, C, D, E]
-
-                Question: {prompt}\n
-                A) {a}\n
-                B) {b}\n
-                C) {c}\n
-                D) {d}\n
-                E) {e}\n### Assistant: {answer}"""
+    template = """
+    ### System:
+    You are an AI assistant that follows instruction extremely well. Help as much as you can.
+    
+    ### User: Choose the following multiple choice answer by giving the most appropriate response. Answer should be one among [A, B, C, D, E]
+    Question: {prompt}\nA) {a}\nB) {b}\nC) {c}\nD) {d}\nE) {e}
+    
+    ### Assistant: {answer}"""
 
     prompt = PromptTemplate(template=template, input_variables=['prompt', 'a', 'b', 'c', 'd', 'e', 'answer'])
 
