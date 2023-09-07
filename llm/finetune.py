@@ -94,7 +94,7 @@ def train(config):
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     tokenizer.pad_token = tokenizer.eos_token
 
-    base_model = LlamaForCausalLM.from_pretrained(
+    model = LlamaForCausalLM.from_pretrained(
             model_id,
             load_in_8bit=True,
             torch_dtype=torch.float16,
