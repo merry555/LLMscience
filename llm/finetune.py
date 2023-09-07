@@ -94,36 +94,26 @@ def train(config):
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     tokenizer.pad_token = tokenizer.eos_token
 
-    bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_use_double_quant=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16
-    )
-
-    base_model = LlamaForCausalLM.from_pretrained(
+    model = LlamaForCausalLM.from_pretrained(
             model_id,
             load_in_8bit=True,
-            quantization_config=bnb_config,
             torch_dtype=torch.float16,
             device_map="auto",
             use_cache=False
             )
     
-    model = prepare_model_for_int8_training(base_model)    
+    model = prepare_model_for_int8_training(model)    
     
-    modules = find_all_linear_names(base_model.model)
-
-    print(modules)
-
     config = LoraConfig(
         r=16,
         lora_alpha=32,
         lora_dropout=0.05,
         bias="none",
-        target_modules=modules, # ['k_proj', 'down_proj', 'up_proj', 'o_proj', 'v_proj', 'gate_proj', 'q_proj']
+        target_modules=["up_proj", "gate_proj", "down_proj"], # , ['k_proj', 'down_proj', 'up_proj', 'o_proj', 'v_proj', 'gate_proj', 'q_proj']
         task_type="CAUSAL_LM"
     )
+
+    # reference: https://platypus-llm.github.io/
 
     model = get_peft_model(model, config)
 
@@ -175,7 +165,7 @@ def train(config):
     
 
     supervised_finetuning_trainer = transformers.Trainer(
-                                        base_model,
+                                        model,
                                         train_dataset=train_data.remove_columns(['A','prompt', 'B', 'C', 'D', 'E', 'answer', 'text']),
                                         eval_dataset=valid_data.remove_columns(['A','prompt', 'B', 'C', 'D', 'E', 'answer', 'text']),
                                         args=training_args,
