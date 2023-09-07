@@ -94,24 +94,34 @@ def train(config):
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     tokenizer.pad_token = tokenizer.eos_token
 
-    model = LlamaForCausalLM.from_pretrained(
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16
+    )
+
+    base_model = LlamaForCausalLM.from_pretrained(
             model_id,
             load_in_8bit=True,
+            quantization_config=bnb_config,
             torch_dtype=torch.float16,
             device_map="auto",
             use_cache=False
             )
     
-    model = prepare_model_for_int8_training(model)    
+    model = prepare_model_for_int8_training(base_model)    
     
-    modules = find_all_linear_names(model.model)
+    modules = find_all_linear_names(base_model.model)
+
+    print(modules)
 
     config = LoraConfig(
         r=16,
         lora_alpha=32,
         lora_dropout=0.05,
         bias="none",
-        target_modules=modules, # , "dense", "dense_h_to_4h", "dense_4h_to_h"
+        target_modules=modules, # ['k_proj', 'down_proj', 'up_proj', 'o_proj', 'v_proj', 'gate_proj', 'q_proj']
         task_type="CAUSAL_LM"
     )
 
@@ -170,7 +180,6 @@ def train(config):
                                         eval_dataset=valid_data.remove_columns(['A','prompt', 'B', 'C', 'D', 'E', 'answer', 'text']),
                                         args=training_args,
                                         tokenizer=tokenizer,
-                                        max_seq_length=2048,
                                         data_collator=transformers.DataCollatorForSeq2Seq(
                                             tokenizer, pad_to_multiple_of=8, return_tensors="pt", padding=True
                                         ),
@@ -184,4 +193,3 @@ if __name__ == "__main__":
     args = parse_args()
     config = read_config(args.config_path)
     train(config)
-    # https://github.com/OFA-Sys/gsm8k-ScRel/blob/7fcb62c4a417370b9cc7860a89c59149205b7598/train_llama2_70b.py#L161
