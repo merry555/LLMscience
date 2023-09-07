@@ -8,11 +8,16 @@ from datasets import load_dataset, Dataset
 import torch
 
 import transformers
-from transformers import AutoModelForCausalLM, BitsAndBytesConfig, LlamaTokenizerFast, AutoTokenizer
+from transformers import LlamaForCausalLM, BitsAndBytesConfig, LlamaTokenizerFast, AutoTokenizer
 from transformers import TrainingArguments
 import bitsandbytes as bnb
-from peft import LoraConfig
-
+from peft import (
+    LoraConfig,
+    get_peft_model,
+    get_peft_model_state_dict,
+    prepare_model_for_int8_training,
+    set_peft_model_state_dict,
+)
 from trl import SFTTrainer, DataCollatorForCompletionOnlyLM
 from langchain.prompts import PromptTemplate
 import argparse
@@ -68,6 +73,8 @@ def format_text(example):
                          e=example['E'], 
                          answer=example['answer'])
     
+    
+    
     return {"text": text}
 
 def train(config):
@@ -87,30 +94,19 @@ def train(config):
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     tokenizer.pad_token = tokenizer.eos_token
 
-    response_template_with_context = "\n### Assistant:"
-    response_template_ids = tokenizer.encode(response_template_with_context, add_special_tokens=False)[2:]
-
-    
-
-    bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_use_double_quant=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16
-    )
-
-    base_model = AutoModelForCausalLM.from_pretrained(
+    base_model = LlamaForCausalLM.from_pretrained(
             model_id,
-            quantization_config=bnb_config,
-            low_cpu_mem_usage=True,
+            load_in_8bit=True,
+            torch_dtype=torch.float16,
             device_map="auto",
             use_cache=False
             )
     
+    model = prepare_model_for_int8_training(model)    
     
     modules = find_all_linear_names(base_model.model)
 
-    qlora_config = LoraConfig(
+    config = LoraConfig(
         r=16,
         lora_alpha=32,
         lora_dropout=0.05,
@@ -118,6 +114,34 @@ def train(config):
         target_modules=modules, # , "dense", "dense_h_to_4h", "dense_4h_to_h"
         task_type="CAUSAL_LM"
     )
+
+    model = get_peft_model(model, config)
+
+    def tokenize(prompt, add_eos_token=True):
+       result = tokenizer(
+          prompt['text'],
+          truncation=True,
+          max_length=2048,
+          padding=False,
+          return_tensors=None
+       )
+
+       if (
+            result["input_ids"][-1] != tokenizer.eos_token_id
+            and len(result["input_ids"]) < 2048
+            and add_eos_token
+        ):
+            result["input_ids"].append(tokenizer.eos_token_id)
+            result["attention_mask"].append(1)
+
+            result["labels"] = result["input_ids"].copy()
+
+            return result
+       
+    
+    train_data = train.map(tokenize)
+    valid_data = valid.map(tokenize)
+    
     
     training_args = TrainingArguments(
                         output_dir="./Orca-mini-7b", 
@@ -140,16 +164,16 @@ def train(config):
                     )
     
 
-    supervised_finetuning_trainer = SFTTrainer(
+    supervised_finetuning_trainer = transformers.Trainer(
                                         base_model,
-                                        train_dataset=train,
-                                        eval_dataset=valid,
+                                        train_dataset=train_data.remove_columns(['A','prompt', 'B', 'C', 'D', 'E', 'answer', 'text']),
+                                        eval_dataset=valid_data.remove_columns(['A','prompt', 'B', 'C', 'D', 'E', 'answer', 'text']),
                                         args=training_args,
                                         tokenizer=tokenizer,
-                                        peft_config=qlora_config,
-                                        dataset_text_field="text",
                                         max_seq_length=2048,
-                                        data_collator=DataCollatorForCompletionOnlyLM(response_template_ids, tokenizer=tokenizer),
+                                        data_collator=transformers.DataCollatorForSeq2Seq(
+                                            tokenizer, pad_to_multiple_of=8, return_tensors="pt", padding=True
+                                        ),
                                     )
     
     supervised_finetuning_trainer.train()
