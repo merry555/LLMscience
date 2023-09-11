@@ -84,8 +84,7 @@ def faiss_index(config):
     with torch.no_grad():
         cnt = 0
         for i, batch in tqdm(enumerate(data_loader)):
-            print(batch)
-            st_output = st_encoder(batch)
+            st_output = st_encoder.encode(batch)
 
             index.add_with_ids(st_output.cpu().numpy().astype('float32'), np.array(range(cnt, cnt + st_output.shape[0])))
             cnt+=st_output.shape[0]
