@@ -1,0 +1,13 @@
+Task : FAISS
+Experiment : LLM-Science
+seed : 42
+data: 
+    folder_path : /home/jisukim/LLMscience/openbook/dataset
+    chunk_size : 128
+    output_folder_path : /home/jisukim/LLMscience/openbook/dataset/output
+    batch_size: 12
+    faiss_output_path: /home/jisukim/LLMscience/openbook/faiss
+model:
+    model_name: sentence-transformers/all-MiniLM-L12-v2
+    device: cuda:0
+    word_embedding_dimension: 384
