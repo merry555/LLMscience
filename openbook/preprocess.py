@@ -63,7 +63,7 @@ def chunk_data(config):
             
             to_save = {idx + i: chunk_text[i] for i in range(len(chunk_text))}
             to_save_parquet = pd.DataFrame(list(to_save.values()), columns=['text'])
-            to_save_parquet.set_index('index', inplace=True)
+            to_save_parquet['index'] = to_save_parquet.index
             
             to_save_parquet.to_parquet(f'{output_folder_path}/{idx}-{idx+len(chunk_text)-1}.parquet')
             
