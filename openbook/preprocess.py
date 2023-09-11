@@ -86,7 +86,7 @@ def faiss_index(config):
         for i, batch in tqdm(enumerate(data_loader)):
             st_output = st_encoder.encode(batch)
 
-            index.add_with_ids(st_output.cpu().numpy().astype('float32'), np.array(range(cnt, cnt + st_output.shape[0])))
+            index.add_with_ids(st_output, np.array(range(cnt, cnt + st_output.shape[0])))
             cnt+=st_output.shape[0]
 
     faiss.write_index(index, config['data']['faiss_output_path'])
