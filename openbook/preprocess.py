@@ -52,7 +52,7 @@ def chunk_data(config):
 
     idx = 0
 
-    # title + text: 512로 자른 데이터 다시 저장 & index 재 부여
+    # title + text: 128로 자른 데이터 다시 저장 & index 재 부여
     for file_name in file_list:
         if file_name.endswith('.parquet'):
             file_path = os.path.join(folder_path, file_name)
@@ -63,8 +63,10 @@ def chunk_data(config):
             
             to_save = {idx + i: chunk_text[i] for i in range(len(chunk_text))}
             to_save_parquet = pd.DataFrame(list(to_save.values()), columns=['text'])
+            to_save_parquet.set_index('index', inplace=True)
             
             to_save_parquet.to_parquet(f'{output_folder_path}/{idx}-{idx+len(chunk_text)-1}.parquet')
+            
             
             idx += len(chunk_text)
 
@@ -98,7 +100,7 @@ def main(config):
     # preprocess(config)
 
     ## 2. Sentece Transformer 들고와서 tokenizer한 다음 512로 잘라서 다시 저장
-    # chunk_data(config)
+    chunk_data(config)
 
     ## 3. Faiss index 만들기
     faiss_index(config)
