@@ -67,7 +67,7 @@ def train(model, train_loader, config):
             with torch.cuda.amp.autocast():
                 input_ids = batch['input_ids'].to(device)
                 attention_masks = batch['attention_masks'].to(device)
-                labels = batch['labels'].long.to(device)
+                labels = batch['labels'].to(device)
                 output = model(input_ids, attention_masks, labels)
 
             loss = output['loss']
