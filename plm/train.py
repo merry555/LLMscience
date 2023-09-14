@@ -15,9 +15,13 @@ import argparse
 import yaml
 from model import LLMScienceForMultipleChoice
 from dataset import CustomDataset
+import wandb
 
 import os
 os.environ["CUDA_VISIBLE_DEVICES"]="1"
+
+wandb.login()
+wandb.init()
 
 def parse_args():
     parser = argparse.ArgumentParser(description="train")
@@ -78,11 +82,10 @@ def train(model, train_loader, config):
             optimizer.zero_grad()
             scheduler.step()
 
-            loss_list.append(loss.detach().cpu().item())
-            avg_loss = np.round(np.mean(loss_list), 4)
+            # loss_list.append(loss.detach().cpu().item())
+            # avg_loss = np.round(np.mean(loss_list), 4)
 
-
-            print("Loss: ", avg_loss)
+            wandb.log({"train_loss": loss})
 
         torch.save(model.state_dict(), '/home/jisukim/LLMscience/plm/output' + f"{epoch}_epochs.bin")
         print('model save complete!')
