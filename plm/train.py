@@ -54,7 +54,7 @@ def train(model, train_loader, config):
     ]
 
     num_train_optimization_steps = int(5 * len(train_loader) / config['model']['accumulation_steps'])
-    optimizer = AdamW(optimizer_grouped_parameters, lr=2e-6,
+    optimizer = AdamW(optimizer_grouped_parameters, lr=1e-6,
                       correct_bias=False)  # To reproduce BertAdam specific behavior set correct_bias=False
     scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=0.05 * num_train_optimization_steps,
                                                 num_training_steps=num_train_optimization_steps)  # PyTorch scheduler
