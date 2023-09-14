@@ -2,7 +2,7 @@ from typing import Optional, Union
 import pandas as pd
 import numpy as np
 # from colorama import Fore, Back, Style
-from tqdm.notebook import tqdm
+from tqdm import tqdm
 import torch
 from torch.utils.data import Dataset, DataLoader
 import gc
@@ -67,7 +67,7 @@ def train(model, train_loader, config):
 
         loss_list = []
 
-        for idx, batch in enumerate(train_loader):
+        for idx, batch in tqdm(enumerate(train_loader)):
             with torch.cuda.amp.autocast():
                 input_ids = batch['input_ids'].to(device)
                 attention_masks = batch['attention_masks'].to(device)
