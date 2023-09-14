@@ -25,7 +25,7 @@ class CustomDataset(Dataset):
         encode_output = self.tokenizer(
             first_sentence, second_sentences, truncation='only_first', 
             max_length=self.total_max_len, add_special_tokens=False,
-            padding=True,
+            padding='max_length',
             return_tensors='pt'
         )
 
