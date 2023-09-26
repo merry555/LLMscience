@@ -82,10 +82,10 @@ def main():
     def preprocess(example):
         split_ctx = example['ctx'].split('!?!?')
 
-        ctx_concat = split_ctx[0] + ' ' + split_ctx[1]
+        ctx_concat = split_ctx[0].replace('[CLS]',' ').replace('[SEP]',' ')[:2100] + '[SEP]' + split_ctx[1].replace('[CLS]',' ').replace('[SEP]',' ')[:2100]
       
         ## context중 10개만 활용
-        first_sentence = [ "[CLS] " + ctx_concat.replace('[CLS]',' ').replace('[SEP]',' ')[:2100] ] * 5
+        first_sentence = [ "[CLS] " + ctx_concat ] * 5
         second_sentences = [" #### " + example['prompt'] + " [SEP] " + str(example[option]) + " [SEP]" for option in 'ABCDE']
         tokenized_example = tokenizer(first_sentence, second_sentences, truncation="only_first")
         tokenized_example['label'] = option_to_index[example['answer']]
