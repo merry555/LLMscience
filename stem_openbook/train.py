@@ -79,7 +79,7 @@ def main():
 
     def preprocess(example):
         ## context중 10개만 활용
-        first_sentence = [ "[CLS] " + ' '.join(train.iloc[0]['ctx'].split('!?!?')[:10]).replace('[CLS]',' ').replace('[SEP]',' ') ] * 5
+        first_sentence = [ "[CLS] " + ' '.join(train.iloc[0]['ctx'].split('!?!?')[:1]).replace('[CLS]',' ').replace('[SEP]',' ') ] * 5
         second_sentences = [" #### " + example['prompt'] + " [SEP] " + str(example[option]) + " [SEP]" for option in 'ABCDE']
         tokenized_example = tokenizer(first_sentence, second_sentences, truncation="only_first")
         tokenized_example['label'] = option_to_index[example['answer']]
