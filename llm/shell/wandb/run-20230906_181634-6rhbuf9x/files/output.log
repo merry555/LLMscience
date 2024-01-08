@@ -1,0 +1,504 @@
+
+
+
+
+
+
+Map: 100%|██████████| 54840/54840 [00:11<00:00, 4616.87 examples/s]
+Map: 100%|██████████| 200/200 [00:00<00:00, 3968.61 examples/s]
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:15<00:00,  7.52s/it]
+/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/peft/utils/other.py:122: FutureWarning: prepare_model_for_int8_training is deprecated and will be removed in a future version. Use prepare_model_for_kbit_training instead.
+  warnings.warn(
+LlamaForCausalLM(
+  (model): LlamaModel(
+    (embed_tokens): Embedding(32000, 4096, padding_idx=0)
+    (layers): ModuleList(
+      (0-31): 32 x LlamaDecoderLayer(
+        (self_attn): LlamaAttention(
+          (q_proj): Linear4bit(in_features=4096, out_features=4096, bias=False)
+          (k_proj): Linear4bit(in_features=4096, out_features=4096, bias=False)
+          (v_proj): Linear4bit(in_features=4096, out_features=4096, bias=False)
+          (o_proj): Linear4bit(in_features=4096, out_features=4096, bias=False)
+          (rotary_emb): LlamaRotaryEmbedding()
+        )
+        (mlp): LlamaMLP(
+          (gate_proj): Linear4bit(in_features=4096, out_features=11008, bias=False)
+          (up_proj): Linear4bit(in_features=4096, out_features=11008, bias=False)
+          (down_proj): Linear4bit(in_features=11008, out_features=4096, bias=False)
+          (act_fn): SiLUActivation()
+        )
+        (input_layernorm): LlamaRMSNorm()
+        (post_attention_layernorm): LlamaRMSNorm()
+      )
+    )
+    (norm): LlamaRMSNorm()
+  )
+  (lm_head): Linear(in_features=4096, out_features=32000, bias=False)
+)
+['k_proj', 'gate_proj', 'o_proj', 'up_proj', 'q_proj', 'down_proj', 'v_proj']
+
+Map: 100%|██████████| 54840/54840 [00:05<00:00, 10913.73 examples/s]
+/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/trl/trainer/sft_trainer.py:207: UserWarning: You passed a tokenizer with `padding_side` not equal to `right` to the SFTTrainer. This might lead to some unexpected behaviour due to overflow issues when training a model in half-precision. You might consider adding `tokenizer.padding_side = 'right'` to your code.
+  warnings.warn(
+  0%|          | 0/34275 [00:00<?, ?it/s]You're using a LlamaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|▏         | 500/34275 [15:59<19:43:03,  2.10s/it]Traceback (most recent call last):
+  File "/home/jisukim/LLMscience/llm/finetune.py", line 162, in <module>
+    train(config)
+  File "/home/jisukim/LLMscience/llm/finetune.py", line 155, in train
+    supervised_finetuning_trainer.train()
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/trainer.py", line 1553, in train
+    return inner_training_loop(
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/trainer.py", line 1927, in _inner_training_loop
+    self._maybe_log_save_evaluate(tr_loss, model, trial, epoch, ignore_keys_for_eval)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/trainer.py", line 2254, in _maybe_log_save_evaluate
+    metrics = self.evaluate(ignore_keys=ignore_keys_for_eval)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/trainer.py", line 2964, in evaluate
+    eval_dataloader = self.get_eval_dataloader(eval_dataset)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/trainer.py", line 879, in get_eval_dataloader
+    raise ValueError("Trainer: evaluation requires an eval_dataset.")
+ValueError: Trainer: evaluation requires an eval_dataset.
+{'loss': 0.0, 'learning_rate': 0.0, 'epoch': 0.07}

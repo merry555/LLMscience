@@ -2,8 +2,8 @@ Task : LLM
 Experiment : LLM-Science
 seed : 42
 data: 
-    train : /Users/mac/LLMscience/dataset/train.csv
-    valid: /Users/mac/LLMscience/dataset/valid.csv
+    train : /home/jisukim/LLMscience/dataset/train.csv
+    valid: /home/jisukim/LLMscience/dataset/valid.csv
 model:
     model_name: psmathur/orca_mini_v3_7b
     

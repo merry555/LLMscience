@@ -1,0 +1,46 @@
+
+
+
+
+
+
+Map: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 54840/54840 [00:13<00:00, 4176.81 examples/s]
+Map: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:00<00:00, 3398.59 examples/s]
+
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:14<00:00,  7.40s/it]
+/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/peft/utils/other.py:122: FutureWarning: prepare_model_for_int8_training is deprecated and will be removed in a future version. Use prepare_model_for_kbit_training instead.
+  warnings.warn(
+
+Map: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 54840/54840 [00:05<00:00, 10860.25 examples/s]
+Map: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:00<00:00, 6270.73 examples/s]
+/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/trl/trainer/sft_trainer.py:207: UserWarning: You passed a tokenizer with `padding_side` not equal to `right` to the SFTTrainer. This might lead to some unexpected behaviour due to overflow issues when training a model in half-precision. You might consider adding `tokenizer.padding_side = 'right'` to your code.
+  warnings.warn(
+  0%|                                                                                                                                                                      | 0/17140 [00:00<?, ?it/s]You're using a LlamaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+
+
+
+
+
+
+
+  0%|                                                                                                                                                           | 8/17140 [02:33<87:51:12, 18.46s/it]Traceback (most recent call last):
+  File "/home/jisukim/LLMscience/llm/finetune.py", line 142, in <module>
+    train(config)
+  File "/home/jisukim/LLMscience/llm/finetune.py", line 135, in train
+    supervised_finetuning_trainer.train()
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/trainer.py", line 1553, in train
+    return inner_training_loop(
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/trainer.py", line 1835, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/trainer.py", line 2690, in training_step
+    self.accelerator.backward(loss)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/accelerate/accelerator.py", line 1921, in backward
+    self.scaler.scale(loss).backward(**kwargs)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/torch/_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/torch/autograd/__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

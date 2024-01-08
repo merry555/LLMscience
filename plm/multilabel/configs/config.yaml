@@ -1,0 +1,13 @@
+Task : LLM
+Experiment : LLM-Science
+seed : 42
+data: 
+    train : /home/jisukim/LLMscience/dataset/train.csv
+    valid: /home/jisukim/LLMscience/dataset/valid.csv
+    batch_size: 16
+    max_length: 512
+model:
+    device: cuda:0
+    model_name: microsoft/deberta-v3-large
+    epoch: 5
+    accumulation_steps: 4    

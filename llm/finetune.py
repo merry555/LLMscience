@@ -2,22 +2,32 @@ import os
 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 
-from datasets import load_dataset
+from datasets import load_dataset, Dataset
 
 import torch
 
 import transformers
-from transformers import AutoModelForCausalLM, BitsAndBytesConfig, AutoTokenizer
+from transformers import LlamaForCausalLM, BitsAndBytesConfig, LlamaTokenizerFast, AutoTokenizer
 from transformers import TrainingArguments
-
-from peft import LoraConfig
-
+import bitsandbytes as bnb
+from peft import (
+    LoraConfig,
+    get_peft_model,
+    get_peft_model_state_dict,
+    prepare_model_for_int8_training,
+    set_peft_model_state_dict,
+)
 from trl import SFTTrainer, DataCollatorForCompletionOnlyLM
 from langchain.prompts import PromptTemplate
 import argparse
 import yaml
+import wandb
+import os
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
+
+wandb.login()
+wandb.init()
 
 def parse_args():
     parser = argparse.ArgumentParser(description="train")
@@ -31,31 +41,27 @@ def read_config(config_path):
         config = yaml.load(file, Loader=yaml.FullLoader)
     return config
 
-def map_at_3(predictions, labels):
-    map_sum = 0
-    pred = np.argsort(-1*np.array(predictions),axis=1)[:,:3]
-    for x,y in zip(pred,labels):
-        z = [1/i if y==j else 0 for i,j in zip([1,2,3],x)]
-        map_sum += np.sum(z)
-    return map_sum / len(predictions)
+def find_all_linear_names(model):
+  lora_module_names = set()
+  for name, module in model.named_modules():
+    if isinstance(module, bnb.nn.Linear4bit):
+      names = name.split(".")
+      lora_module_names.add(names[0] if len(names) == 1 else names[-1])
 
-# Define your custom evaluation function
-def compute_metrics(p):
-    predictions = p.predictions.tolist()
-    labels = p.label_ids.tolist()
-    return {"map@3": map_at_3(predictions, labels)}
+  if "lm_head" in lora_module_names:  # needed for 16-bit
+    lora_module_names.remove("lm_head")
+  return list(lora_module_names)
+
 
 def format_text(example):
-    template = """Answer the following multiple choice question by giving the most appropriate response. Answer should be one among [A, B, C, D, E]
-
-                Question: {prompt}\n
-                A) {a}\n
-                B) {b}\n
-                C) {c}\n
-                D) {d}\n
-                E) {e}\n
-
-                Answer: {answer}"""
+    template = """
+    ### System:
+    You are an AI assistant that follows instruction extremely well. Help as much as you can.
+    
+    ### User: Choose the following multiple choice answer by giving the most appropriate response. Answer should be one among [A, B, C, D, E]
+    Question: {prompt}\nA) {a}\nB) {b}\nC) {c}\nD) {d}\nE) {e}
+    
+    ### Assistant: {answer}"""
 
     prompt = PromptTemplate(template=template, input_variables=['prompt', 'a', 'b', 'c', 'd', 'e', 'answer'])
 
@@ -67,69 +73,107 @@ def format_text(example):
                          e=example['E'], 
                          answer=example['answer'])
     
+    
+    
     return {"text": text}
 
 def train(config):
     train = pd.read_csv(config['data']['train']).sample(frac=1).reset_index(drop=True)
     valid = pd.read_csv(config['data']['valid']).sample(frac=1).reset_index(drop=True)
+    
+    train_ds = Dataset.from_pandas(train)
+    valid_ds = Dataset.from_pandas(valid)
 
-    train = train.map(format_text)
-    valid = valid.map(format_text)
+    del train, valid
+
+    train = train_ds.map(format_text)
+    valid = valid_ds.map(format_text)
 
     model_id = config['model']['model_name']
 
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     tokenizer.pad_token = tokenizer.eos_token
 
-    qlora_config = LoraConfig(
+    model = LlamaForCausalLM.from_pretrained(
+            model_id,
+            load_in_8bit=True,
+            torch_dtype=torch.float16,
+            device_map="auto",
+            use_cache=False
+            )
+    
+    model = prepare_model_for_int8_training(model)    
+    
+    config = LoraConfig(
         r=16,
         lora_alpha=32,
         lora_dropout=0.05,
         bias="none",
-        target_modules=["query_key_value"], # , "dense", "dense_h_to_4h", "dense_4h_to_h"
+        target_modules=["up_proj", "gate_proj", "down_proj"], # , ['k_proj', 'down_proj', 'up_proj', 'o_proj', 'v_proj', 'gate_proj', 'q_proj']
         task_type="CAUSAL_LM"
     )
 
-    bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_use_double_quant=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16
-    )
+    # reference: https://platypus-llm.github.io/
 
-    base_model = AutoModelForCausalLM.from_pretrained(
-            model_id,
-            quantization_config=bnb_config,
-            low_cpu_mem_usage=True,
-            device_map="cuda:0"
-            )
+    model = get_peft_model(model, config)
+
+    def tokenize(prompt, add_eos_token=True):
+       result = tokenizer(
+          prompt['text'],
+          truncation=True,
+          max_length=2048,
+          padding=False,
+          return_tensors=None
+       )
+
+       if (
+            result["input_ids"][-1] != tokenizer.eos_token_id
+            and len(result["input_ids"]) < 2048
+            and add_eos_token
+        ):
+            result["input_ids"].append(tokenizer.eos_token_id)
+            result["attention_mask"].append(1)
+
+            result["labels"] = result["input_ids"].copy()
+
+            return result
+       
+    
+    train_data = train.map(tokenize)
+    valid_data = valid.map(tokenize)
+    
     
     training_args = TrainingArguments(
                         output_dir="./Orca-mini-7b", 
-                        per_device_train_batch_size=4,
+                        overwrite_output_dir=True,
+                        save_total_limit=2,
+                        evaluation_strategy="steps",
+                        warmup_ratio=0.8,
+                        eval_steps=500,
+                        logging_steps=500,
+                        per_device_train_batch_size=16,
                         per_device_eval_batch_size=8,
-                        gradient_accumulation_steps=2,
+                        num_train_epochs=5,
+                        lr_scheduler_type="cosine",
                         learning_rate=2e-4,
-                        logging_steps=20,
-                        logging_strategy="steps",
-                        max_steps=100,
-                        optim="paged_adamw_8bit",
+                        save_strategy='steps',
+                        optim="adamw_torch",
                         fp16=True,
-                        run_name="baseline-orca-sft"
+                        run_name="baseline-orca-sft",
+                        report_to="wandb",
+                        
                     )
     
-    supervised_finetuning_trainer = SFTTrainer(
-                                        base_model,
-                                        train_dataset=train["train"],
-                                        eval_dataset=valid["train"],
+
+    supervised_finetuning_trainer = transformers.Trainer(
+                                        model,
+                                        train_dataset=train_data.remove_columns(['A','prompt', 'B', 'C', 'D', 'E', 'answer', 'text']),
+                                        eval_dataset=valid_data.remove_columns(['A','prompt', 'B', 'C', 'D', 'E', 'answer', 'text']),
                                         args=training_args,
                                         tokenizer=tokenizer,
-                                        peft_config=qlora_config,
-                                        dataset_text_field="text",
-                                        max_seq_length=2048,
-                                        data_collator=DataCollatorForCompletionOnlyLM(tokenizer=tokenizer, 
-                                                                                    response_template="Answer:"),
-                                        # compute_metrics=compute_metrics
+                                        data_collator=transformers.DataCollatorForSeq2Seq(
+                                            tokenizer, pad_to_multiple_of=8, return_tensors="pt", padding=True
+                                        ),
                                     )
     
     supervised_finetuning_trainer.train()

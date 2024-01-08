@@ -1,0 +1,26 @@
+2023-09-06 16:33:07,129 INFO    MainThread:4693 [wandb_setup.py:_flush():76] Current SDK version is 0.15.9
+2023-09-06 16:33:07,129 INFO    MainThread:4693 [wandb_setup.py:_flush():76] Configure stats pid to 4693
+2023-09-06 16:33:07,130 INFO    MainThread:4693 [wandb_setup.py:_flush():76] Loading settings from /home/jisukim/.config/wandb/settings
+2023-09-06 16:33:07,130 INFO    MainThread:4693 [wandb_setup.py:_flush():76] Loading settings from /home/jisukim/LLMscience/llm/wandb/settings
+2023-09-06 16:33:07,130 INFO    MainThread:4693 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-09-06 16:33:07,130 INFO    MainThread:4693 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'llm/finetune.py', 'program': '/home/jisukim/LLMscience/llm/finetune.py'}
+2023-09-06 16:33:07,130 INFO    MainThread:4693 [wandb_init.py:_log_setup():524] Logging user logs to /home/jisukim/LLMscience/llm/wandb/run-20230906_163307-zgfwyoy5/logs/debug.log
+2023-09-06 16:33:07,130 INFO    MainThread:4693 [wandb_init.py:_log_setup():525] Logging internal logs to /home/jisukim/LLMscience/llm/wandb/run-20230906_163307-zgfwyoy5/logs/debug-internal.log
+2023-09-06 16:33:07,130 INFO    MainThread:4693 [wandb_init.py:init():564] calling init triggers
+2023-09-06 16:33:07,130 INFO    MainThread:4693 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {}
+2023-09-06 16:33:07,130 INFO    MainThread:4693 [wandb_init.py:init():613] starting backend
+2023-09-06 16:33:07,130 INFO    MainThread:4693 [wandb_init.py:init():617] setting up manager
+2023-09-06 16:33:07,132 INFO    MainThread:4693 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-09-06 16:33:07,134 INFO    MainThread:4693 [wandb_init.py:init():623] backend started and connected
+2023-09-06 16:33:07,142 INFO    MainThread:4693 [wandb_init.py:init():714] updated telemetry
+2023-09-06 16:33:07,166 INFO    MainThread:4693 [wandb_init.py:init():747] communicating run to backend with 60.0 second timeout
+2023-09-06 16:33:07,792 INFO    MainThread:4693 [wandb_run.py:_on_init():2180] communicating current version
+2023-09-06 16:33:07,827 INFO    MainThread:4693 [wandb_run.py:_on_init():2189] got version response 
+2023-09-06 16:33:07,827 INFO    MainThread:4693 [wandb_init.py:init():798] starting run threads in backend
+2023-09-06 16:33:07,959 INFO    MainThread:4693 [wandb_run.py:_console_start():2159] atexit reg
+2023-09-06 16:33:07,959 INFO    MainThread:4693 [wandb_run.py:_redirect():2014] redirect: wrap_raw
+2023-09-06 16:33:07,959 INFO    MainThread:4693 [wandb_run.py:_redirect():2079] Wrapping output streams.
+2023-09-06 16:33:07,959 INFO    MainThread:4693 [wandb_run.py:_redirect():2104] Redirects installed.
+2023-09-06 16:33:07,960 INFO    MainThread:4693 [wandb_init.py:init():839] run started, returning control to user process
+2023-09-06 16:34:18,955 WARNING MsgRouterThr:4693 [router.py:message_loop():77] message_loop has been closed

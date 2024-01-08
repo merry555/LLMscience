@@ -1,0 +1,1233 @@
+
+
+
+
+
+
+Map: 100%|██████████| 54840/54840 [00:11<00:00, 4739.27 examples/s]
+Map: 100%|██████████| 200/200 [00:00<00:00, 4069.49 examples/s]
+Downloading (…)okenizer_config.json: 100%|██████████| 220/220 [00:00<00:00, 23.3kB/s]
+Downloading (…)/main/tokenizer.json: 100%|██████████| 2.73M/2.73M [00:01<00:00, 2.26MB/s]
+Downloading (…)cial_tokens_map.json: 100%|██████████| 281/281 [00:00<00:00, 103kB/s]
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization.
+The tokenizer class you load from this checkpoint is 'PreTrainedTokenizerFast'.
+The class this function is called from is 'LlamaTokenizerFast'.
+Traceback (most recent call last):
+  File "/home/jisukim/LLMscience/llm/finetune.py", line 161, in <module>
+    train(config)
+  File "/home/jisukim/LLMscience/llm/finetune.py", line 87, in train
+    tokenizer = LlamaTokenizerFast.from_pretrained(model_id)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1841, in from_pretrained
+    return cls._from_pretrained(
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 2004, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/models/llama/tokenization_llama_fast.py", line 126, in __init__
+    self.update_post_processor()
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/models/llama/tokenization_llama_fast.py", line 136, in update_post_processor
+    bos_token_id = self.bos_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1136, in bos_token_id
+    return self.convert_tokens_to_ids(self.bos_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 1155, in unk_token_id
+    return self.convert_tokens_to_ids(self.unk_token)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 250, in convert_tokens_to_ids
+    return self._convert_token_to_id_with_added_voc(tokens)
+  File "/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 257, in _convert_token_to_id_with_added_voc
+    return self.unk_token_id

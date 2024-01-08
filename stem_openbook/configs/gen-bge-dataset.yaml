@@ -1,0 +1,17 @@
+Task : FAISS
+Experiment : LLM-Science
+seed : 42
+data: 
+    dtype: train
+    train_path : /home/jisukim/LLMscience/dataset/train.csv
+    valid_path : /home/jisukim/LLMscience/dataset/valid.csv
+    train_ctx_path : /home/jisukim/LLMscience/dataset/train_ctx_bge.csv
+    valid_ctx_path : /home/jisukim/LLMscience/dataset/valid_ctx_bgecsv
+    wiki_path : /home/jisukim/LLMscience/openbook/dataset/stem_wiki_only_ctx.parquet
+    batch_size: 32
+    faiss_output_path: /home/jisukim/LLMscience/openbook/stem_faiss/faiss/bge-base-en-v1.5-index.index
+
+model:
+    model_name: BAAI/bge-base-en-v1.5
+    device: cuda:1
+    word_embedding_dimension: 768

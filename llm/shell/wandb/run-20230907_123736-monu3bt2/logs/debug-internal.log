@@ -1,0 +1,423 @@
+2023-09-07 12:37:36,051 INFO    StreamThr :34353 [internal.py:wandb_internal():86] W&B internal server running at pid: 34353, started at: 2023-09-07 12:37:36.051022
+2023-09-07 12:37:36,052 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status
+2023-09-07 12:37:36,056 INFO    WriterThread:34353 [datastore.py:open_for_write():85] open: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/run-monu3bt2.wandb
+2023-09-07 12:37:36,056 DEBUG   SenderThread:34353 [sender.py:send():379] send: header
+2023-09-07 12:37:36,080 DEBUG   SenderThread:34353 [sender.py:send():379] send: run
+2023-09-07 12:37:36,633 INFO    SenderThread:34353 [dir_watcher.py:__init__():211] watching files in: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files
+2023-09-07 12:37:36,633 INFO    SenderThread:34353 [sender.py:_start_run_threads():1121] run started: monu3bt2 with start time 1694057856.051242
+2023-09-07 12:37:36,633 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: summary_record
+2023-09-07 12:37:36,634 INFO    SenderThread:34353 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-07 12:37:36,641 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: check_version
+2023-09-07 12:37:36,642 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: check_version
+2023-09-07 12:37:36,717 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: run_start
+2023-09-07 12:37:36,725 DEBUG   HandlerThread:34353 [system_info.py:__init__():31] System info init
+2023-09-07 12:37:36,725 DEBUG   HandlerThread:34353 [system_info.py:__init__():46] System info init done
+2023-09-07 12:37:36,725 INFO    HandlerThread:34353 [system_monitor.py:start():181] Starting system monitor
+2023-09-07 12:37:36,725 INFO    SystemMonitor:34353 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-09-07 12:37:36,726 INFO    HandlerThread:34353 [system_monitor.py:probe():201] Collecting system info
+2023-09-07 12:37:36,726 INFO    SystemMonitor:34353 [interfaces.py:start():190] Started cpu monitoring
+2023-09-07 12:37:36,727 INFO    SystemMonitor:34353 [interfaces.py:start():190] Started disk monitoring
+2023-09-07 12:37:36,727 INFO    SystemMonitor:34353 [interfaces.py:start():190] Started gpu monitoring
+2023-09-07 12:37:36,728 INFO    SystemMonitor:34353 [interfaces.py:start():190] Started memory monitoring
+2023-09-07 12:37:36,729 INFO    SystemMonitor:34353 [interfaces.py:start():190] Started network monitoring
+2023-09-07 12:37:36,761 DEBUG   HandlerThread:34353 [system_info.py:probe():195] Probing system
+2023-09-07 12:37:36,762 DEBUG   HandlerThread:34353 [system_info.py:_probe_git():180] Probing git
+2023-09-07 12:37:36,774 DEBUG   HandlerThread:34353 [system_info.py:_probe_git():188] Probing git done
+2023-09-07 12:37:36,774 DEBUG   HandlerThread:34353 [system_info.py:probe():240] Probing system done
+2023-09-07 12:37:36,774 DEBUG   HandlerThread:34353 [system_monitor.py:probe():210] {'os': 'Linux-4.15.0-206-generic-x86_64-with-glibc2.27', 'python': '3.8.16', 'heartbeatAt': '2023-09-07T03:37:36.761877', 'startedAt': '2023-09-07T03:37:36.045865', 'docker': None, 'cuda': None, 'args': ('--config', '/home/jisukim/LLMscience/llm/configs/config_orca_mini_v3_7b.yaml'), 'state': 'running', 'program': '/home/jisukim/LLMscience/llm/finetune.py', 'codePath': 'llm/finetune.py', 'git': {'remote': 'https://github.com/merry555/LLMscience.git', 'commit': '275daea0a54a4af053f1d6a103b74a005ec42624'}, 'email': 'jisukim8873@gmail.com', 'root': '/home/jisukim/LLMscience', 'host': 'dev-03', 'username': 'jisukim', 'executable': '/home/jisukim/.cache/pypoetry/virtualenvs/llmscience-qSp4PjaH-py3.8/bin/python3', 'cpu_count': 20, 'cpu_count_logical': 40, 'cpu_freq': {'current': 2902.20625, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2906.785, 'min': 0.0, 'max': 0.0}, {'current': 2896.882, 'min': 0.0, 'max': 0.0}, {'current': 2896.847, 'min': 0.0, 'max': 0.0}, {'current': 2896.801, 'min': 0.0, 'max': 0.0}, {'current': 2892.907, 'min': 0.0, 'max': 0.0}, {'current': 2898.62, 'min': 0.0, 'max': 0.0}, {'current': 2902.712, 'min': 0.0, 'max': 0.0}, {'current': 2902.17, 'min': 0.0, 'max': 0.0}, {'current': 2900.277, 'min': 0.0, 'max': 0.0}, {'current': 2905.568, 'min': 0.0, 'max': 0.0}, {'current': 2902.288, 'min': 0.0, 'max': 0.0}, {'current': 2899.424, 'min': 0.0, 'max': 0.0}, {'current': 2900.03, 'min': 0.0, 'max': 0.0}, {'current': 2902.469, 'min': 0.0, 'max': 0.0}, {'current': 2900.51, 'min': 0.0, 'max': 0.0}, {'current': 2900.408, 'min': 0.0, 'max': 0.0}, {'current': 2899.589, 'min': 0.0, 'max': 0.0}, {'current': 2899.792, 'min': 0.0, 'max': 0.0}, {'current': 2898.849, 'min': 0.0, 'max': 0.0}, {'current': 2897.472, 'min': 0.0, 'max': 0.0}, {'current': 2910.137, 'min': 0.0, 'max': 0.0}, {'current': 2898.285, 'min': 0.0, 'max': 0.0}, {'current': 2898.863, 'min': 0.0, 'max': 0.0}, {'current': 2904.7, 'min': 0.0, 'max': 0.0}, {'current': 2900.717, 'min': 0.0, 'max': 0.0}, {'current': 2906.666, 'min': 0.0, 'max': 0.0}, {'current': 2908.985, 'min': 0.0, 'max': 0.0}, {'current': 2908.629, 'min': 0.0, 'max': 0.0}, {'current': 2907.498, 'min': 0.0, 'max': 0.0}, {'current': 2901.36, 'min': 0.0, 'max': 0.0}, {'current': 2899.606, 'min': 0.0, 'max': 0.0}, {'current': 2907.189, 'min': 0.0, 'max': 0.0}, {'current': 2900.418, 'min': 0.0, 'max': 0.0}, {'current': 2899.999, 'min': 0.0, 'max': 0.0}, {'current': 2899.845, 'min': 0.0, 'max': 0.0}, {'current': 2910.452, 'min': 0.0, 'max': 0.0}, {'current': 2902.007, 'min': 0.0, 'max': 0.0}, {'current': 2906.122, 'min': 0.0, 'max': 0.0}, {'current': 2906.455, 'min': 0.0, 'max': 0.0}, {'current': 2909.917, 'min': 0.0, 'max': 0.0}], 'disk': {'total': 878.620922088623, 'used': 534.912784576416}, 'gpu': 'NVIDIA A100-PCIE-40GB', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA A100-PCIE-40GB', 'memory_total': 42949672960}, {'name': 'NVIDIA A100-PCIE-40GB', 'memory_total': 42949672960}], 'memory': {'total': 125.41301345825195}}
+2023-09-07 12:37:36,774 INFO    HandlerThread:34353 [system_monitor.py:probe():211] Finished collecting system info
+2023-09-07 12:37:36,774 INFO    HandlerThread:34353 [system_monitor.py:probe():214] Publishing system info
+2023-09-07 12:37:36,774 DEBUG   HandlerThread:34353 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-09-07 12:37:36,774 DEBUG   HandlerThread:34353 [system_info.py:_save_pip():67] Saving pip packages done
+2023-09-07 12:37:36,775 INFO    HandlerThread:34353 [system_monitor.py:probe():216] Finished publishing system info
+2023-09-07 12:37:36,777 DEBUG   SenderThread:34353 [sender.py:send():379] send: files
+2023-09-07 12:37:36,777 INFO    SenderThread:34353 [sender.py:_save_file():1375] saving file wandb-metadata.json with policy now
+2023-09-07 12:37:36,783 DEBUG   SenderThread:34353 [sender.py:send():379] send: telemetry
+2023-09-07 12:37:36,783 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:37:36,783 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:37:37,634 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_created():271] file/dir created: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/wandb-summary.json
+2023-09-07 12:37:37,635 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_created():271] file/dir created: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/wandb-metadata.json
+2023-09-07 12:37:37,635 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_created():271] file/dir created: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:37:37,635 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_created():271] file/dir created: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/requirements.txt
+2023-09-07 12:37:38,225 INFO    wandb-upload_0:34353 [upload_job.py:push():131] Uploaded file /tmp/tmp01ap1o2dwandb/3iiebukt-wandb-metadata.json
+2023-09-07 12:37:39,634 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:37:41,121 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:37:41,634 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:37:43,634 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:37:45,635 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:37:46,253 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:37:47,635 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:37:49,636 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:37:51,583 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:37:51,782 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:37:51,783 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:37:53,637 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:37:57,054 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:38:02,982 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:38:03,639 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:38:05,640 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:38:06,783 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:38:06,783 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:38:07,640 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:38:08,001 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:38:08,641 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/config.yaml
+2023-09-07 12:38:13,243 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:38:18,243 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:38:21,782 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:38:21,783 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:38:24,004 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:38:29,004 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:38:34,005 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:38:36,729 DEBUG   SystemMonitor:34353 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-09-07 12:38:36,730 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:38:36,784 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:38:36,785 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:38:39,081 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:38:44,082 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:38:49,082 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:38:51,783 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:38:51,783 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:38:55,081 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:38:57,651 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:38:59,652 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:00,199 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:39:00,948 DEBUG   SenderThread:34353 [sender.py:send():379] send: config
+2023-09-07 12:39:00,948 DEBUG   SenderThread:34353 [sender.py:send():379] send: metric
+2023-09-07 12:39:00,949 DEBUG   SenderThread:34353 [sender.py:send():379] send: telemetry
+2023-09-07 12:39:00,949 DEBUG   SenderThread:34353 [sender.py:send():379] send: metric
+2023-09-07 12:39:00,949 WARNING SenderThread:34353 [sender.py:send_metric():1326] Seen metric with glob (shouldn't happen)
+2023-09-07 12:39:01,654 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:03,654 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:05,655 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:05,693 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:39:06,732 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:39:06,783 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:39:06,783 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:39:07,655 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:09,656 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:10,737 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:39:11,657 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:11,657 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/config.yaml
+2023-09-07 12:39:13,657 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:15,658 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:16,617 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:39:17,659 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:19,659 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:21,660 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:21,783 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:39:21,783 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:39:22,006 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:39:23,661 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:25,662 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:27,662 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:27,690 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:39:29,663 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:31,664 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:33,665 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:33,678 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:39:35,665 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:36,733 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:39:36,783 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:39:36,784 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:39:37,666 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:39,182 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:39:39,667 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:41,667 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:43,668 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:44,194 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:39:45,669 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:47,670 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:49,671 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:49,861 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:39:51,672 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:51,783 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:39:51,784 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:39:53,672 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:55,673 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:55,823 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:39:57,674 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:39:59,674 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:00,851 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:40:01,675 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:03,676 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:05,677 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:05,989 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:40:06,733 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:40:06,783 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:40:06,784 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:40:07,677 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:09,678 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:11,168 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:40:11,679 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:13,680 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:15,681 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:17,043 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:40:17,682 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:19,683 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:21,683 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:21,784 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:40:21,784 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:40:22,079 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:40:23,684 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:25,685 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:27,332 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:40:27,685 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:29,686 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:31,687 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:32,552 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:40:33,687 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:35,688 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:36,734 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:40:36,790 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:40:36,790 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:40:37,689 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:38,052 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:40:39,690 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:41,690 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:43,584 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:40:43,691 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:45,692 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:47,692 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:49,036 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:40:49,693 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:51,694 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:51,789 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:40:51,789 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:40:53,695 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:54,287 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:40:55,695 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:57,696 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:40:59,697 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:00,279 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:41:01,697 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:03,698 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:05,553 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:41:05,699 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:06,735 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:41:06,789 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:41:06,789 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:41:07,699 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:09,700 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:11,016 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:41:11,701 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:13,702 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:15,702 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:16,193 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:41:17,703 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:19,703 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:21,617 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:41:21,704 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:21,789 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:41:21,789 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:41:23,705 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:25,705 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:27,076 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:41:27,706 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:29,707 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:31,707 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:32,724 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:41:33,708 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:35,709 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:36,736 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:41:36,790 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:41:36,790 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:41:37,709 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:38,166 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:41:39,710 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:41,711 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:43,277 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:41:43,711 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:45,712 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:47,713 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:49,140 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:41:49,714 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:51,714 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:51,789 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:41:51,790 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:41:53,715 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:54,273 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:41:55,716 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:57,716 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:59,717 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:41:59,719 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:42:01,718 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:03,718 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:05,425 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:42:05,719 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:06,737 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:42:06,789 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:42:06,790 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:42:07,720 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:09,720 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:11,182 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:42:11,721 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:13,722 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:15,723 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:16,326 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:42:17,723 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:19,724 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:21,501 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:42:21,725 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:21,790 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:42:21,790 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:42:23,725 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:25,726 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:26,667 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:42:27,727 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:29,728 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:31,728 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:31,962 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:42:33,729 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:35,730 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:36,738 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:42:36,790 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:42:36,790 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:42:37,102 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:42:37,730 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:39,731 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:41,732 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:43,075 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:42:43,733 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:45,733 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:47,734 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:48,376 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:42:49,735 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:51,735 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:51,790 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:42:51,790 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:42:53,736 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:54,161 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:42:55,737 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:57,738 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:42:59,551 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:42:59,738 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:01,739 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:03,739 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:05,524 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:43:05,740 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:06,739 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:43:06,790 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:43:06,790 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:43:07,740 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:09,741 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:10,859 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:43:11,741 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:13,742 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:15,742 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:16,653 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:43:17,743 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:19,743 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:21,744 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:21,790 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:43:21,790 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:43:22,070 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:43:23,744 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:25,744 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:27,259 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:43:27,745 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:29,746 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:31,746 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:32,541 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:43:33,747 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:35,747 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:36,740 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:43:36,790 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:43:36,790 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:43:37,748 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:38,093 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:43:39,748 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:41,749 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:43,153 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:43:43,749 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:45,750 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:47,750 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:49,082 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:43:49,751 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:51,751 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:51,790 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:43:51,791 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:43:53,752 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:54,599 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:43:55,752 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:57,753 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:43:59,753 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:00,412 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:44:01,754 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:03,754 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:05,922 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:44:06,741 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:44:06,755 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:06,790 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:44:06,791 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:44:08,756 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:10,756 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:11,019 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:44:12,757 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:14,757 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:16,415 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:44:16,758 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:18,758 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:20,759 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:21,583 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:44:21,791 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:44:21,791 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:44:22,759 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:24,760 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:26,760 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:26,850 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:44:28,761 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:30,761 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:32,647 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:44:32,762 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:36,742 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:44:36,763 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:36,791 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:44:36,791 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:44:37,715 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:44:38,763 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:40,764 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:42,764 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:42,947 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:44:44,765 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:46,765 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:48,336 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:44:48,766 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:50,766 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:51,791 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:44:51,791 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:44:52,767 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:54,077 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:44:54,767 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:56,767 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:58,768 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:44:59,177 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:45:00,768 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:02,769 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:04,546 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:45:04,769 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:06,743 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:45:06,769 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:06,791 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:45:06,792 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:45:08,770 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:09,660 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:45:10,770 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:12,771 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:14,771 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:15,089 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:45:16,771 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:18,772 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:20,434 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:45:20,772 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:21,791 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:45:21,791 DEBUG   SenderThread:34353 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:45:22,773 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:24,773 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:25,799 DEBUG   HandlerThread:34353 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:45:26,773 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:26,805 INFO    memory    :34353 [interfaces.py:monitor():140] Process proc.memory.rssMB has exited.
+2023-09-07 12:45:26,805 DEBUG   SystemMonitor:34353 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-09-07 12:45:26,806 DEBUG   SystemMonitor:34353 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-09-07 12:45:26,807 DEBUG   SenderThread:34353 [sender.py:send():379] send: stats
+2023-09-07 12:45:28,774 INFO    Thread-12 :34353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/jisukim/LLMscience/llm/shell/wandb/run-20230907_123736-monu3bt2/files/output.log
+2023-09-07 12:45:28,783 INFO    MainThread:34353 [internal.py:handle_exit():76] Internal process exited
